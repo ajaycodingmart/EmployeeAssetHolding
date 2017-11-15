@@ -57,3 +57,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'pry'
 gem 'rails_admin', '~> 1.2'
+gem 'devise'
+gem 'toastr-rails'
