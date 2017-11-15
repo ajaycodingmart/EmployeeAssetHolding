@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  asset_id: MyString
+  description: MyText
+  quantity_avaliable: 
+  company: one
+
+two:
+  name: MyString
+  asset_id: MyString
+  description: MyText
+  quantity_avaliable: 
+  company: two

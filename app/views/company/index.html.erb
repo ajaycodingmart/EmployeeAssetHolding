@@ -1,0 +1,14 @@
+<h1>This is the list of companies avaliable</h1>
+<ul>
+	<%Company.all.each do |company|%>
+	<li>Name :
+		<%=company.name%>
+		<%=link_to 'Add New Asset', new_asset_path%>
+		<%=link_to 'Add New Employee', new_employee_path%>
+	</li>
+	<%end%>
+</ul>
+
+<p>Total Number of companies avaliable are <%=Company.all.count%> </p>
+<%=link_to 'Back to Main Index', root_path%>
+

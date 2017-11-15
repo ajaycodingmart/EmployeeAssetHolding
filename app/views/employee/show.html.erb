@@ -1,0 +1,8 @@
+<h1>Hello <%=@emp.name%></h1>
+<p>If I am not wrong, you work for <%=@emp.company.name%></p>
+<%if @emp.has_assets%>
+<h2>You are using assets that belongs to <%=@emp.company.name%></h2>
+<p>Here are they</p>
+
+<%end%>
+<%=link_to 'Back to Index', employee_index_path%>
