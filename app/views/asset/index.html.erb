@@ -1,10 +1,9 @@
-<h1>This is the list of Assets avaliable for <%=Asset.first.company.name%> </h1>
+<h1>This is the list of Assets avaliable for </h1>
 <ul>
 	<%Asset.all.each do |asset|%>
 	<li>Name :<%= asset.name %></li>
-	<li>Asset Id :<%= asset.asset_id %></li>
+	<li>Asset Id :<%= asset.asset_model_id %></li>
 	<li>Asset Description :<%= asset.description %></li>
-	<li>Total Quantity :<%= asset.total_quantity %></li>
 	<li>Quantity Used :<%= asset.quantity_used %></li>
 	<li>Quantity Avaliable :<%= asset.quantity_avaliable %></li>
 	<br>
@@ -12,4 +11,4 @@
 </ul>
 
 <p>Total Number of Assets avaliable are <%=Asset.all.count%> </p>
-<%=link_to 'Back to Main Index', root_path%>
+<%=link_to 'Back to Main Index', company_index_path%>

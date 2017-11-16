@@ -1,10 +1,14 @@
-<h1>This is the list of companies avaliable</h1>
+<h1>Company Index</h1>
 <ul>
 	<%Company.all.each do |company|%>
 	<li>Name :
-		<%=company.name%>
+		<%=company.name.capitalize%>
 		<%=link_to 'Add New Asset', new_asset_path%>
 		<%=link_to 'Add New Employee', new_employee_path%>
+		<%=link_to 'Assets Index', asset_index_path%>
+        <%=link_to 'Employees Index', employee_index_path%>
+        <%=link_to 'Assign Asset', new_asset_path%>
+        <%=link_to 'Withdraw Asset', employee_index_path%>
 	</li>
 	<%end%>
 </ul>

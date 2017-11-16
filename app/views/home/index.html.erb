@@ -1,4 +1,7 @@
 <h1>Welcome Home</h1>
-<p>Go to Company Index <%= link_to 'Companies Index', company_index_path%></p>
+<% if current_user.superadmin_role? || current_user.admin_role? %>
+	<p>Go to Company Index <%= link_to 'Company Index', company_index_path%></p>
+<% end %>
 <p>Go to Asset Index <%= link_to 'Assets Index', asset_index_path%></p>
 <p>Go to Employee Index <%= link_to 'Employees Index', employee_index_path%></p>
+

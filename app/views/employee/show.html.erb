@@ -1,8 +1,17 @@
 <h1>Hello <%=@emp.name%></h1>
 <p>If I am not wrong, you work for <%=@emp.company.name%></p>
-<%if @emp.has_assets%>
+<%if @emp.assets.present?%>
 <h2>You are using assets that belongs to <%=@emp.company.name%></h2>
 <p>Here are they</p>
-
+<ul>
+	<%@emp.assets.each do |asset|%>
+		<li>Asset Name: <%=asset.name%></li>
+		<li>Asset Id: <%=asset.asset_model_id%></li>
+		<li>Asset Description: <%=asset.description%></li>
+		<br>
+	<%end%>
+</ul>
+<%else%>
+<h2><%=@emp.name%> doesn't have any assets as of now</h2>
 <%end%>
 <%=link_to 'Back to Index', employee_index_path%>

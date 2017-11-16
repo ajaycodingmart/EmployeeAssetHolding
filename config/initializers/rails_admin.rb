@@ -37,5 +37,6 @@ RailsAdmin.config do |config|
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+    config.authorize_with :cancan
   end
 end
