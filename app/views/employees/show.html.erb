@@ -6,7 +6,7 @@
 <ul>
 	<%@emp.assets.each do |asset|%>
 		<li>Asset Name: <%=asset.name%></li>
-		<li>Asset Id: <%=asset.asset_model_id%></li>
+		<li><%=asset.name%> Model: <%=asset.asset_model_id%></li>
 		<li>Asset Description: <%=asset.description%></li>
 		<br>
 	<%end%>
