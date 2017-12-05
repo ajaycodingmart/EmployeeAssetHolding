@@ -1,0 +1,13 @@
+<%if @user.assets.present?%>
+<ul>
+	<%@user.assets.each do |asset|%>
+		<li>Asset Name: <%=asset.name%></li>
+		<li><%=asset.name%> Model: <%=asset.asset_model_id%></li>
+		<li>Asset Description: <%=asset.description%></li>
+		<br>
+	<%end%>
+</ul>
+<%else%>
+<h2><%=@user.name%> doesn't have any assets as of now</h2>
+<%end%>
+<%=link_to 'Back to Index', users_path%>

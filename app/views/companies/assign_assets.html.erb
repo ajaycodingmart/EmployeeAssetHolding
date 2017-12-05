@@ -1,0 +1,19 @@
+<h1>Assign Assets</h1>
+<p>This is the list of Assets avaliable for <%=@user_company%></p>
+<ul>
+	<%User.all.each do |user|%>
+	<li>Name :<%= user.name %>
+		<select multiple="true">
+			<%Asset.all.each do |asset|%>
+			<option><%=asset.name%></option>
+			<%end%>
+		</select>
+	</li>
+	<br>
+	<%end%>
+</ul>
+<%= button_to   'Submit', { :action => "assign_assets", :controller => "companies"},  method: :get %>
+<p>Total Number of Assets avaliable are <%=Asset.all.count%> </p>
+<%= link_to 'Back', company_path(current_user.company_id)%>
+<br>
+<%=link_to 'Back to Main Index', companies_path%>

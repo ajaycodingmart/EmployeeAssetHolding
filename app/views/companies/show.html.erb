@@ -1,2 +1,34 @@
-<h1>Company#show</h1>
-<p>Find me in app/views/company/show.html.erb</p>
+<section class="hero is-primary">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                Welcome to <%=@company_name.capitalize%>
+            </h1>
+            <br>
+            <h2 class="subtitle">
+                <strong>Actions</strong>
+            </h2>
+            <hr>
+            <ul>
+                <li class="columns links">
+                    <div class="column">
+                        <%=link_to 'Add New Asset', new_asset_path%>
+                    </div>
+                    <div class="column"> 
+                        <%=link_to 'Assets Index', assets_path%>
+                    </div>
+                    <div class="column">
+                        <%=link_to 'User Index', users_path%>
+                    </div>
+                    <div class="column">
+                        <%=link_to 'Assign Asset', '/companies/assign_assets'%>
+                    </div>
+                    <div class="column">
+                        <%=link_to 'Withdraw Asset', '/companies/withdraw_assets'%>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<%=link_to 'Back to Main Index', root_path%>

@@ -14,32 +14,32 @@
     </div>
   <% end %>
 
-
-  <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
+<div class="container is-info is-large">
+  <div class="form-container">
+  <p class="field">
+    <%= form.label :name, :class => 'label' %>
+    <div class="control">
+      <%= form.text_field :name, :class => 'input' %>
+    </div>
   </p>
- 
-  <p>
-    <%= form.label :asset_model, :title => 'Identification Number' %><br>
-    <%= form.text_field :asset_model %>
+  <p class="field">
+    <%= form.label :asset_model_id, :title => 'Identification Number', :class => 'label' %>
+    <%= form.text_field :asset_model_id, :class => 'input' %>
   </p>
-  
-  <p>
-    <%= form.label :company_name %><br>
-    <%= form.text_field :company_name %>
+  <p class="field">
+    <%= form.label :quantity_avaliable, :title => 'Quantity Avaliable', :class => 'label' %>
+    <%= form.number_field :quantity_avaliable, :class => 'input' %>
   </p>
-
-  <p>
-    <%= form.label :description %><br>
-    <%= form.text_area :description %>
+  <p class="field">
+    <%= form.label :description, :class => 'label'%>
+    <%= form.text_area :description, :class => 'textarea'  %>
   </p>
-
-  <p>
-    <%= form.submit %>
+  <p class="field">
+    <%= form.submit "Submit", :class => 'button is-primary'%>
   </p>
- 
+  </div>
+</div>
 <% end %>
 
-<%=link_to 'Back' , companies_path%>
+<%=link_to 'Back' , company_path(current_user.company_id), :class => 'button is-text'%>
  

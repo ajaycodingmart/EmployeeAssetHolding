@@ -1,0 +1,12 @@
+<h1>Details of employees working for <%=@user_company%></h1>
+<ul>
+	<%User.all.each do |user|%>
+	<li>Name :<%=user.name%></li>
+	<p>Check <%=user.name%>'s details <%= link_to 'Show', user_path(user)%></p>
+	<br>
+	<%end%>
+</ul>
+<p>Total Number of employees avaliable are <%=User.all.count%> </p>
+<%= link_to 'Back', company_path(current_user.company_id)%>
+<br>
+<%=link_to 'Back to Main Index', root_path%>

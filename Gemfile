@@ -61,3 +61,4 @@ gem 'devise'
 gem 'toastr-rails'
 gem 'cancancan'
 gem 'devise_invitable', '~> 1.7.0'
+gem "bulma-rails", "~> 0.6.1"

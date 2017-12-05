@@ -1,4 +1,4 @@
-<h1>This is the list of Assets avaliable for <%=Company.first.name%></h1>
+<h1>This is the list of Assets avaliable for <%=@user_company%></h1>
 <ul>
 	<%Asset.all.each do |asset|%>
 	<li>Name :<%= asset.name %></li>
@@ -11,4 +11,6 @@
 </ul>
 
 <p>Total Number of Assets avaliable are <%=Asset.all.count%> </p>
-<%=link_to 'Back to Main Index', companies_path%>
+<%= link_to 'Back', company_path(current_user.company_id)%>
+<br>
+<%=link_to 'Back to Main Index', root_path%>

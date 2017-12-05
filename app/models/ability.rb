@@ -3,21 +3,19 @@ class Ability
 
   def initialize(user)
     user ||= User.new # guest user (not logged in)
-    
-    if user.superadmin_role?
-      can :manage, :all
-      can :access, :rails_admin       # only allow admin users to access Rails Admin
-      can :dashboard                  # allow access to dashboard
-    end
-    
-    if user.admin_role?
-      can :manage, :all
-    end
 
-    if user.employee_role?
-      can :manage, :all
-    end
+    # if user.role == "super_admin"
+    #   can :manage, :all
+    #   can :access, :rails_admin       # only allow admin users to access Rails Admin
+    #   can :dashboard                  # allow access to dashboard
+    # end
     
+    # if user.role == "admin"
+    #   can :manage, :all
+    #   can :access, :rails_admin
+    #   can :dashboard
+    # end
+    can :manage, :all
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

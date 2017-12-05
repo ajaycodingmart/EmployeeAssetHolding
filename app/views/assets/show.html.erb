@@ -1,3 +1,6 @@
-<%=@asset.each do |asset|%>
-	<%=asset.name%>
-<%end%>
+<ul>
+	<li><%=@asset.name%></li>
+	<li><%=@asset.asset_model_id%></li>
+	<li><%=@asset.description%></li>
+</ul>
+<%=link_to 'Back', assets_path %>

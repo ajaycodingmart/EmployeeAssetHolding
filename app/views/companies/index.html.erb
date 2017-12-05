@@ -1,18 +1,23 @@
-<h1>Company Index</h1>
+<section class="hero is-large is-primary is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                Companies Index
+            </h1>
+        </div>
 <ul>
 	<%Company.all.each do |company|%>
 	<li>Name :
 		<%=company.name.capitalize%>
 		<%=link_to 'Add New Asset', new_asset_path%>
-		<%=link_to 'Add New Employee', new_employee_path%>
 		<%=link_to 'Assets Index', assets_path%>
-        <%=link_to 'Employees Index', employees_path%>
-        <%=link_to 'Assign Asset', assets_path%>
-        <%=link_to 'Withdraw Asset', employees_path%>
+        <%=link_to 'User Index', users_path%>
 	</li>
 	<%end%>
 </ul>
 
 <p>Total Number of companies avaliable are <%=Company.all.count%> </p>
+    </div>
+</section>
 <%=link_to 'Back to Main Index', root_path%>
 

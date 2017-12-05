@@ -18,7 +18,7 @@
      </script>
 	<% end %>
   <%if current_user.present?%>
-    <%= link_to('Logout', destroy_user_session_path) %> 
+    <%= link_to('Logout', destroy_user_session_path, :class => 'button is-text') %> 
 	<%end%>
     <%= yield %>
   </body>

@@ -15,3 +15,19 @@
  *= require jquery-ui
  *= require toastr
  */
+.sign-margin-auto{
+	margin: auto;
+}
+.sign-title{
+	margin: 50px; 
+}
+.notification.is-primary {
+    box-shadow: 0px 0px 7px 1px rgba(94, 155, 146, 0.28);
+}
+.form-container{
+	margin: 30px; 
+}
+.links .column > a:hover{
+	border-bottom: 5px solid rgb(40, 180, 161); 
+	transition: 0.4s ease;
+}

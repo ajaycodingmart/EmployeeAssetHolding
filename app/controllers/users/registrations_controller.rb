@@ -8,9 +8,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    company = Company.create(name: params["user"]["company_name"])
+    params["user"].delete("company_name")
+    params["user"]["company_id"] = company.id
+    super
+  end
 
   # GET /resource/edit
   # def edit

@@ -1,0 +1,26 @@
+<h1>Withdraw Assets</h1>
+<p>This is the list of Assets avaliable for <%=@user_company%></p>
+
+<%= form_tag scope: :company do%>
+<ul>
+	<%Asset.all.each do |asset|%>
+	<li>Asset Name :<%= asset.name %>
+	From :<select multiple="true">
+		<%User.all.each do |usr|%>
+		<option><%=usr.name%></option>
+		<%end%>
+	</select>
+	</li>	
+	<br>
+	<%end%>
+
+	<p>
+    <%= button_to "Save", url: '/test/saved' , action: :withdraw_assets , method: :post %>	
+	</p>
+</ul>
+<% end %>
+
+<p>Total Number of Assets avaliable are <%=Asset.all.count%> </p>
+<%= link_to 'Back', company_path(current_user.company_id)%>
+<br>
+<%=link_to 'Back to Main Index', companies_path%>

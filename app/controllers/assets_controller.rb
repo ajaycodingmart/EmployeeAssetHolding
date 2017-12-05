@@ -1,6 +1,7 @@
 class AssetsController < ApplicationController
   def index
     @asset = Asset.all
+    @user_company = Company.find(current_user.company_id).name
   end
 
   def show
@@ -16,8 +17,9 @@ class AssetsController < ApplicationController
   end
 
   def create
-    binding.pry
-    permit_params
+    params[:asset][:company_id] = current_user.company_id
+    params[:asset][:user_id] = current_user.id
+    params[:asset][:quantity_used] = 0 
     @asset = Asset.new(permit_params)
     if @asset.save
       redirect_to @asset
@@ -43,6 +45,6 @@ class AssetsController < ApplicationController
   end
 
   private def permit_params
-    params[:asset].permit(:name, :asset_model_id, :description)
+    params[:asset].permit(:name, :asset_model_id, :description, :user_id, :company_id, :quantity_used)
   end
 end
